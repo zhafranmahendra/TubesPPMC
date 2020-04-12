@@ -83,40 +83,64 @@ int count_neighbor (int jumlah_baris, int jumlah_kolom, int posisi_baris, int po
  return(count);
 };
 
+//prosedur Tick dari matriks saat ini
 void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
+ //prosedur ini memiliki paramter input jumlah baris, jumlah kolom, dan pointer ke elemen pertama matriks saat ini
+ //prosedur akan menghasilkan matriks hasil tick (iterasi sesuai ketentuan) dari matriks saat ini.
+ //mengassign Next_Matriks sebagai matriks sementara hasil tick dari Curr_Matriks dengan besar yang sama dengan Curr_Matriks
  char *Next_Matriks = malloc(sizeod(char)*jumlah_kolom*jumlah_baris);
+ //indeks untuk looping dan posisi elemen pada matriks
  int i,j;
+ //looping untuk baris dari Curr_Matriks, dari baris pertama hingga baris akhir
  for(i=0;i<jumlah_baris;i++){
+  //looping untuk kolom dari Curr_Matriks, dari kolom pertama hingga kolom akhir
   for(j=0;j<jumlah_kolom;j++){
+   //jika elemen pada posisi Curr_Matriks[i][j] berstatus hidup, alias 'X'
    if(*(Curr_Matriks+(i*jumlah_kolom)+j) == 'X'){
+    //jika hasil perhitungan fungsi count_neighbor kurang dari 2
     if(count_neighbor(jumlah_baris,jumlah_kolom,i,j,Curr_Matriks)<2){
+     //mengassign bahwa kondisi berikutnya elemen ini akan mati, alias '-', karena under population
      *(Next_Matriks+(i*jumlah_kolom)+j) = '-';
     }
+    //jika hasil perhitungan fungsi count_neighbor tidak kurang dari 2
     else{
+      //jika hasil perhitungan fungsi count_neighbor lebih dari 3
       if(count_neighbor(jumlah_baris,jumlah_kolom,i,j,Curr_Matriks)>3){
+       //mengassign bahwa kondisi berikutnya elemen ini akan mati, alias '-', karena over population
        *(Next_Matriks+(i*jumlah_kolom)+j) = '-';
       }
+      //jika hasil perhitungan fungsi count_neighbor tidak lebih dari 3
       else{
+       //mengassign bahwa kondisi berikutnya elemen ini tidak berubah (tetap hidup)
        *(Next_Matriks+(i*jumlah_kolom)+j) = *(Curr_Matriks+(i*jumlah_kolom)+j);
       };
      };
     }
+   //jika elemen pada posisi Curr_Matriks[i][j] berstatus mati, alias '-'
     else{
+     //jika hasil perhitungan fungsi count_neighbor tepat sama dengan 3
      if(count_neighbor(jumlah_baris,jumlah_kolom,i,j,Curr_Matriks)==3){
+      //mengassign bahwa kondisi berikutnya elemen menjadi hidup (seperti memiliki anak)
       *(Next_Matriks+(i*jumlah_kolom)+j) = 'X';
      }
+     //jika hasil perhitungan fungsi count_neighbor tidak tepat sama dengan 3
      else{
+      //mengassign bahwa kondisi berikutnya elemen ini tidak berubah (tetap mati)
       *(Next_Matriks+(i*jumlah_kolom)+j) = *(Curr_Matriks+(i*jumlah_kolom)+j);
      };
     };
   };
  };
+ //looping untuk baris dari Curr_Matriks, dari baris pertama hingga baris akhir
  for(i=0;i<jumlah_baris;i++){
+  //looping untuk kolom dari Curr_Matriks, dari kolom pertama hingga kolom akhir
   for(j=0;j<jumlah_kolom;j++){
+   //mengassign elemen-elemen pada Curr_Matriks menjadi Next_Matriks
    *(Curr_Matriks+(i*jumlah_kolom)+j) = *(Next_Matriks+(i*jumlah_kolom)+j);
-   free(Next_Matriks+(i*jumlah_kolom)+j);
   };
  };
+ //membebaskan memori dari Next_Matriks
+ free(Next_Matriks);
 };
     
  
