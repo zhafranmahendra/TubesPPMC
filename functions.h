@@ -6,6 +6,8 @@
 * Nama File   : functions.h  
 * Deskripsi   : Implementasi fungsi Tick dan count_neighbor  */ 
  
+//file ini digunakan sebagai library untuk fungsi-fungsi yang akan digunakan pada program utama
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
