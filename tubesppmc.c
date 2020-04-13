@@ -29,6 +29,13 @@ int main(void){
 			scanf(" %s",namafile);//inout nama file
 			FILE *file;
 			file = fopen(namafile,"r");//membaca file yang diinput oleh user
+			while (file == NULL )
+			{
+				printf("File tidak ada, Ulangi input file!\n");
+				printf("Masukkan nama file : ");
+				scanf(" %s",namafile);
+				file = fopen(namafile,"r");
+			}
 			char buf[MAX];
 			jumlah_baris = atoi(fgets(buf,MAX,file));//membaca jumlah baris dari file eksternal kemudian merubah ke integer hasil tersebut
       			//dan disipan didalam variabel jumlah_baris. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah 
