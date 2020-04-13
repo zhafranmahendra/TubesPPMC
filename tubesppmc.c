@@ -10,7 +10,7 @@ int main(void){
   //tampilan awal permainan
 	printf("\n");
 	printf("~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'\n");
-    printf("         _________                                _   _____                               __   _     _  __     \n");
+    printf("         ______                                _   _____                               __   _     _  __     \n");
     printf("        /  __ \\                              ( )     |  __ \\                             / _| | |   (_)/ _|         \n");
     printf("        | /  \\/ ___  _ ____      ____ _ _   _|/ ___  | |  \\/ __ _ _ __ ___   ___    ___ | |_  | |    _| |_ ___      \n");
     printf("        | |    / _ \\| '_ \\ \\ /\\ / / _` | | | | / __| | | __ / _` | '_ ` _ \\ / _ \\  / _ \\|  _| | |   | |  _/ _ \\     \n");
@@ -29,11 +29,11 @@ int main(void){
 			scanf(" %s",namafile);//inout nama file
 			FILE *file;
 			file = fopen(namafile,"r");//membaca file yang diinput oleh user
-			while (file == NULL )
+			while (file == NULL )//proses validasi apabila file tidak ditemukan
 			{
-				printf("File tidak ada, Ulangi input file!\n");
+				printf("File tidak ada, Ulangi input file!\n");//pesan kesalahan bahwa file tidak ditemukan
 				printf("Masukkan nama file : ");
-				scanf(" %s",namafile);
+				scanf(" %s",namafile);//input ulang nama file
 				file = fopen(namafile,"r");
 			}
 			char buf[MAX];
