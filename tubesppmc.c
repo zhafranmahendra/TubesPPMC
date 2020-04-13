@@ -31,14 +31,14 @@ int main(void){
 			file = fopen(namafile,"r");//membaca file yang diinput oleh user
 			char buf[MAX];
 			jumlah_baris = atoi(fgets(buf,MAX,file));//membaca jumlah baris dari file eksternal kemudian merubah ke integer hasil tersebut
-      //dan disipan didalam variabel jumlah_baris. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah 
-      //baris sampai akhir
+      			//dan disipan didalam variabel jumlah_baris. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah 
+      			//baris sampai akhir
 			jumlah_kolom = atoi(fgets(buf,MAX,file));//membaca jumlah kolom dari file eksternal kemudian merubah ke integer hasil tersebut
-      //dan disipan didalam variabel jumlah_kolom. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah kolom
-      //sampai akhir
+     			 //dan disipan didalam variabel jumlah_kolom. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah kolom
+      			//sampai akhir
 			free(Curr_Matriks);
 			Curr_Matriks = malloc(sizeof(char)*jumlah_baris*jumlah_kolom);//memesan mempori untuk array curr_matriks sebesar jumlah baris 
-      //dan jumlah kolom
+      			//dan jumlah kolom
 			Matriks_Input(jumlah_baris,jumlah_kolom,Curr_Matriks,file);//memanggil prosedur matriks_input
 			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur printMatriks
 			fclose(file);//menutup file
