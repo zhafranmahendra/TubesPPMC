@@ -144,5 +144,53 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  //membebaskan memori dari Next_Matriks
  free(Next_Matriks);
 };
-    
+//prosedur menu untuk tampilan user
+
+void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
+	int pilihan,iterasi;
+	char jawab[5];
+ //setelah memasukkan nama file, maka akan ditampilkan berbagai menu seperti berikut.
+	printf("\nPILIHAN MENU\n");
+	printf("1. Animate\n");//pilihan ini akan menjalankan prosedur animate dengan meminta input berapa kali iterasi
+	printf("2. Tick\n");//pilihan ini akan hanya menjalankan prosedur tick kemudian dikeluarkan hasilnya(1 iterasi)
+	printf("3. Quit\n");//Pilihan ini akan selanjutnya dimintai file eksternal yang baru kemudian akan keluar jika tidak ingin melanjutkan
+	printf("\nMasukkan pilihan menu : ");
+	scanf("%d",&pilihan);
+	if(pilihan == 1){//menjalankan prosedur animate
+		printf("\nMasukkan banyak iterasi : ");
+		scanf("%d",&iterasi);//input jumlah iterasi yang diinginkan
+		Animate(jumlah_baris,jumlah_kolom,Curr_Matriks,iterasi);//memanggil fungsi animate
+	}
+	else{
+		if(pilihan == 2){//menjalankan prosedur tick
+			Tick(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil fungsi tick
+			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//melakukan pencetakan
+		}
+		else{
+			if(pilihan == 3){//akan diminta file eksternal yang baru
+				printf("\nApakah ingin memasukkan file baru ? Ya/Tidak\n");//diminta apakah ingin memasukkan file baru atau tidak
+				printf("Jawaban : ");
+				scanf(" %s",jawab);
+				while (strcmp(jawab,"Ya") != 0 && strcmp(jawab,"Tidak") != 0)//melakukan validasi input
+                {
+                    printf("Pilihan salah, Ulangi! \n");
+                    printf("\nApakah ingin memasukkan file baru ? Ya/Tidak\n");//diminta apakah ingin memasukkan file baru atau tidak
+                    printf("Jawaban : ");
+                    scanf(" %s",jawab);
+                }
+				if(strcmp(jawab,"Ya")==0 ){//jika ingin kembali memasukkan file baru
+					//free(Curr_Matriks);
+					*ulang = 1;//variabel ulang tetap 1 yang artinya program akan meminta kembali file baru
+				}
+				else if(strcmp(jawab,"Tidak")==0)//jika tidak ingin memasukkan file baru
+                {
+                	*done = 1;//variabel done akan menjadi 1 yang tandanya program akan berakhir
+				}
+			}
+			else{//apabila inputan menu salah
+				printf("Masukkan pilihan menu salah, ulangi\n");
+			};
+		};
+	};
+};
  
