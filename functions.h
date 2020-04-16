@@ -155,7 +155,8 @@ void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
 
 	int i,j;
 	// Variabel untuk indeks matriks yang digunakan pada looping
-
+	
+	// Algoritma
 	printf("\nTampilan Matriks\n\n");
 
 	// Mencetak matriks
@@ -181,14 +182,14 @@ void delay(int milli_seconds)
 	
 	// Algoritma 
 
-    // Menyimpan start time
-    clock_t start_time = clock();
+   	 // Menyimpan start time
+    	clock_t start_time = clock();
 
-    // nilai delay yang diinginkan ditambahkan dengan nilai start time
-    time_delay = start_time + milli_seconds;
+    	// nilai delay yang diinginkan ditambahkan dengan nilai start time
+   	 time_delay = start_time + milli_seconds;
 
 	// Melakukan looping sampai delay yang dibutuhkan/diinginkan
-    while (time < time_delay){
+    	while (time < time_delay){
 		time = clock();
 	};  
 } ;
