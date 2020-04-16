@@ -309,5 +309,25 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 		};
 	};
 };
+void program_nyala(){//prosedure untuk menghasilkan tulisan perlahan-lahan seperti menulis
+printf("         \t\t\t\t\t\t");
+printf("G");Sleep(200);//sleep adalah fungsi dari lib windows.h untuk memberikan jeda
+printf("A");Sleep(200);
+printf("M");Sleep(200);
+printf("E");Sleep(200);
+printf(" ");Sleep(200);
+printf("S");Sleep(200);
+printf("T");Sleep(200);
+printf("A");Sleep(200);
+printf("R");Sleep(200);
+printf("T");Sleep(200);
+printf("S");Sleep(200);
+printf(".");Sleep(200);
+printf(".");Sleep(200);
+printf(".");Sleep(200);
+printf("\n");
+
+
+}
 
 
