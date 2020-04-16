@@ -15,6 +15,9 @@
 #include <time.h> 
 #include<windows.h>
 
+int const MAX = 100;
+
+
 // Prosedur memindahkan data dari file ke matriks
 void Matriks_Input(int jumlah_baris, int jumlah_kolom, char *MatriksInput, FILE *file){
 // Prosedur dengan parameter, jumlah barus, jumlah baris, pointer karakter variabel, dan file
