@@ -193,4 +193,65 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 		};
 	};
 };
- 
+
+// Prosedur Animate Matriks saat ini
+void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi){
+	// Prosedur ini memiliki paramter input jumlah baris, jumlah kolom, pointer ke elemen pertama matriks saat ini, dan jumlah iterasi yang akan dilakukan
+	// Prosedur akan menghasilkan matriks hasil tick dan menampilkannya, proses ini dilakukan sebanyak iterasi yang telah ditentukan
+	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu printMatriks untuk mencetak matriks
+	//  dan Tick untuk melakukan 1 proses iterasi
+
+
+
+	// Kamus lokal
+	int count = 0;
+	// Variabel count sebagai counter untuk menentukan proses iterasi sudah selesai atau belum
+	
+	// Algoritma
+	system("cls");
+	// Membersihkan layar program 
+
+	// Mencetak matriks saat ini
+	printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
+	while(count<iterasi){
+		// Melakukan proses tick dan mencetak hasil sebanyak iterasi sesuai dengan input prosedur
+		delay(500);
+		// Memberikan delay antar iterasi
+
+		system("cls");
+		// Membersihkan layar program
+
+		// Melakukan proses tick dan mencetak matriks hasik tick
+		Tick(jumlah_baris,jumlah_kolom,Curr_Matriks);
+		printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
+		
+		count++;
+		// Proses iterasi pertama selesai dan dilanjutkan dengan iterasi kedua ditandai dengan nilai count bertambah 1
+	};
+};
+
+// Prosedur Delay 
+void delay(int milli_seconds) 
+{ 	
+	// Prosedur delay memiliki parameter input waktu delay yang diinginkan dalam milisecond(ms)
+	
+	// Kamus lokal
+
+	int time = 0;
+
+	// Variabel utk menyimpan nilai delay yang diingkinkan
+	int time_delay;
+	
+	// Algoritma 
+
+    // Menyimpan start time
+    clock_t start_time = clock();
+
+    // nilai delay yang diinginkan ditambahkan dengan nilai start time
+    time_delay = start_time + milli_seconds;
+
+	// Melakukan looping sampai delay yang dibutuhkan/diinginkan
+    while (time < time_delay){
+		time = clock();
+	};  
+} ;
