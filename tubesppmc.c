@@ -1,10 +1,11 @@
 #include "functions.h" //memasukkan library file functions untuk digunakan
 
 int main(void){
-	int jumlah_baris;
-	int jumlah_kolom;
-	int done = 0;
-	int ulang = 1;
+	int jumlah_baris; //variabel untuk menyimpan jumlah baris dari matriks
+	int jumlah_kolom; //variabel untuk menyimpan jumlah kolom dari matriks
+	int done = 0; //variabel untuk status apakah pengguna sudah selesai menggunakan program atau belum, deklarasi awal 0 menunjukkan belum mulai menggunakan program
+	int ulang = 1; //variabel untuk status apakah ingin input file baru atau tidak (kondisi awal dinyatakan 1 sebagai ingin input file baru)
+	int gen = 0; //variabel untuk menandakan posisi iterasi dari matriks saat ini
 	char namafile[100];//array penyimpan inputan nama file user
 	char *Curr_Matriks = malloc(sizeof(char)*1*1);
   
@@ -51,7 +52,7 @@ int main(void){
 			fclose(file);//menutup file
 			ulang = 0;
 		};
-		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks,namafile);//memanggil prosedur menu 
+		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks,&gen,namafile);//memanggil prosedur menu 
 		printf("\n");
 	};
 	printf("Terima Kasih\n");//jika menu Quit dipilih dan tidak ingin menginput file baru
