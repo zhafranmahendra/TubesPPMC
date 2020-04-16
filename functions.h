@@ -198,8 +198,10 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi){
 	// Prosedur ini memiliki paramter input jumlah baris, jumlah kolom, pointer ke elemen pertama matriks saat ini, dan jumlah iterasi yang akan dilakukan
 	// Prosedur akan menghasilkan matriks hasil tick dan menampilkannya, proses ini dilakukan sebanyak iterasi yang telah ditentukan
-	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu printMatriks untuk mencetak matriks
-	//  dan Tick untuk melakukan 1 proses iterasi
+	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu diantaranya :
+	// printMatriks untuk mencetak matriks
+	// Tick untuk melakukan 1 proses iterasi
+	// Delay untuk memberikan jeda(delay) antar iterasi
 
 	// Kamus lokal
 	int count = 0;
