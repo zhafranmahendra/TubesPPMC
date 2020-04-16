@@ -257,8 +257,6 @@ void printStatus(int jumlah_baris, int jumlah_kolom, int gen, char nama_file[100
 void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks, int *gen, char namafile[100]){
 	int pilihan,iterasi;
 	char jawab[5];
-//menampilkan status dari matriks
-	printStatus(jumlah_baris,jumlah_kolom,*gen,namafile);
  //setelah memasukkan nama file, maka akan ditampilkan berbagai menu seperti berikut.
 	printf("\nPILIHAN MENU\n");
 	printf("1. Animate\n");//pilihan ini akan menjalankan prosedur animate dengan meminta input berapa kali iterasi
