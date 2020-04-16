@@ -14,7 +14,10 @@
 #include <conio.h>
 #include <time.h> 
 
+// Prosedur memindahkan data dari file ke matriks
 void Matriks_Input(int jumlah_baris, int jumlah_kolom, char *MatriksInput, FILE *file){
+// Prosedur dengan parameter, jumlah barus, jumlah baris, pointer karakter variabel, dan file
+// Prosedur akan memindahkan data tiap baris dan kolom pada file ke matriks
 	int i,j;
 	char buf[jumlah_kolom];
 	for(i=0;i<jumlah_baris;i++){
@@ -25,7 +28,10 @@ void Matriks_Input(int jumlah_baris, int jumlah_kolom, char *MatriksInput, FILE 
 	};
 };
 
+// Prosedur menampilkan matriks
 void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
+// Prosedur dengan parameter jumlah baris, jumlah kolom, dan matriks
+// Prosedur akan membaca per baris per kolom dan mencetaknya satu satu
 	int i,j;
 	printf("\nTampilan Matriks\n\n");
 	for(i=0;i<jumlah_baris;i++){
