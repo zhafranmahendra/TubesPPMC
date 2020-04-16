@@ -64,7 +64,7 @@ int count_neighbor (int jumlah_baris, int jumlah_kolom, int posisi_baris, int po
  //looping untuk baris dari matriks, dari posisi elemen secara vertikal kurang satu hingga posisi elemen secara vertikal tambah 1
  for(i=(posisi_baris-1);i<(posisi_baris+2);i++){
    //looping untuk kolom dari matriks, dari posisi elemen secara horizontal kurang satu hingga posisi elemen secara horizontal tambah 1
-  for(j=(posisi_kolom-1);j<(posisi_kolom+2);i++){
+  for(j=(posisi_kolom-1);j<(posisi_kolom+2);j++){
    /*
    *jika setelah pengurangan ternyata indeks baris adalah -1, karena matriks toroidal maka -1 menandakan baris paling akhir
    *merupakan atas dari baris elemen saat ini.
@@ -177,7 +177,6 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  //membebaskan memori dari Next_Matriks
  free(Next_Matriks);
 };
-//prosedur menu untuk tampilan user
 
 // Prosedur Delay 
 void delay(int milli_seconds) 
@@ -228,7 +227,7 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 	// melakukan looping sampai nilai count sama dengan iterasi
 	while(count<iterasi){
 		// Melakukan proses tick dan mencetak hasil sebanyak iterasi sesuai dengan input prosedur
-		delay(500);
+		delay(250);
 		// Memberikan delay antar iterasi
 
 		system("cls");
@@ -243,7 +242,7 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 	};
 };
 
-
+//prosedur menu untuk tampilan user
 void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
 	int pilihan,iterasi;
 	char jawab[5];
