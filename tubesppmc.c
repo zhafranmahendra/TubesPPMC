@@ -20,7 +20,7 @@ int main(void){
     printf("                                        |___/                                                                       \n");
     printf("\n");
     printf("~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'~'\n");
-    printf("                                                    GAME STARTS....\n");
+    program_nyala();
 
 	while(done == 0){//selama done masih bernilai 0(tidak quit) artinya program akan terus berjalan
 		if(ulang == 1){
