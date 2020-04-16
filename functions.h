@@ -272,7 +272,6 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 	else{
 		if(pilihan == 2){//menjalankan prosedur tick
 			Tick(jumlah_baris,jumlah_kolom,Curr_Matriks,gen);//memanggil fungsi tick
-			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//melakukan pencetakan
 		}
 		else{
 			if(pilihan == 3){//akan diminta file eksternal yang baru
