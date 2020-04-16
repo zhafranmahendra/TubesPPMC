@@ -51,6 +51,7 @@ int main(void){
 			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur printMatriks
 			fclose(file);//menutup file
 			ulang = 0;
+			gen = 0;
 		};
 		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks,&gen,namafile);//memanggil prosedur menu 
 		printf("\n");
