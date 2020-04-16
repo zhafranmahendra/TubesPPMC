@@ -39,10 +39,10 @@ int main(void){
 			char buf[MAX];
 			jumlah_baris = atoi(fgets(buf,MAX,file));//membaca jumlah baris dari file eksternal kemudian merubah ke integer hasil tersebut
       			//dan disipan didalam variabel jumlah_baris. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah 
-      			//baris sampai akhir
+      			//baris yang ditulis pada seed file
 			jumlah_kolom = atoi(fgets(buf,MAX,file));//membaca jumlah kolom dari file eksternal kemudian merubah ke integer hasil tersebut
      			 //dan disipan didalam variabel jumlah_kolom. pembacaan digunakan dengan fungsi fgets yang mana akan membaca jumlah kolom
-      			//sampai akhir
+      			//yang ditulis pada seed file
 			free(Curr_Matriks);
 			Curr_Matriks = malloc(sizeof(char)*jumlah_baris*jumlah_kolom);//memesan mempori untuk array curr_matriks sebesar jumlah baris 
       			//dan jumlah kolom
