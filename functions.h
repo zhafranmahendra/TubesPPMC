@@ -1,10 +1,10 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020  
 * MODUL 9 – TUGAS BESAR  
 * Kelompok   : 5  
-* Hari dan Tanggal : Senin, 13 April 2018 
+* Hari dan Tanggal : Kamis, 16 April 2018 
 * Asisten (NIM)  : Meinanto Tri Yuriawan (13217021) 
 * Nama File   : functions.h  
-* Deskripsi   : Implementasi fungsi Tick, menu ,count_neighbor  */ 
+* Deskripsi   : Debugging program final  */ 
  
 //file ini digunakan sebagai library untuk fungsi-fungsi yang akan digunakan pada program utama
 
@@ -40,7 +40,7 @@ void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
 	printf("\nTampilan Matriks\n\n");
 	for(i=0;i<jumlah_baris;i++){
 		for(j=0;j<jumlah_kolom;j++){
-			printf("%c ",*((matriks+(i*jumlah_kolom))+j));
+			printf("%c",*((matriks+(i*jumlah_kolom))+j));
 		};
 		printf("\n");
 	};
