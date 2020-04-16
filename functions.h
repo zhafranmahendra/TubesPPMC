@@ -123,7 +123,7 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  //prosedur ini memiliki paramter input jumlah baris, jumlah kolom, dan pointer ke elemen pertama matriks saat ini
  //prosedur akan menghasilkan matriks hasil tick (iterasi sesuai ketentuan) dari matriks saat ini.
  //mengassign Next_Matriks sebagai matriks sementara hasil tick dari Curr_Matriks dengan besar yang sama dengan Curr_Matriks
- char *Next_Matriks = malloc(sizeof(char)*jumlah_kolom*jumlah_baris);
+ char *Next_Matriks = (char*)malloc(sizeof(char)*jumlah_kolom*jumlah_baris);
  //indeks untuk looping dan posisi elemen pada matriks
  int i,j;
  //looping untuk baris dari Curr_Matriks, dari baris pertama hingga baris akhir
