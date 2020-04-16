@@ -13,6 +13,7 @@
 #include <string.h>
 #include <conio.h>
 #include <time.h> 
+#include<windows.h>
 
 // Prosedur memindahkan data dari file ke matriks
 void Matriks_Input(int jumlah_baris, int jumlah_kolom, char *MatriksInput, FILE *file){
@@ -119,7 +120,7 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  //prosedur ini memiliki paramter input jumlah baris, jumlah kolom, dan pointer ke elemen pertama matriks saat ini
  //prosedur akan menghasilkan matriks hasil tick (iterasi sesuai ketentuan) dari matriks saat ini.
  //mengassign Next_Matriks sebagai matriks sementara hasil tick dari Curr_Matriks dengan besar yang sama dengan Curr_Matriks
- char *Next_Matriks = malloc(sizeod(char)*jumlah_kolom*jumlah_baris);
+ char *Next_Matriks = malloc(sizeof(char)*jumlah_kolom*jumlah_baris);
  //indeks untuk looping dan posisi elemen pada matriks
  int i,j;
  //looping untuk baris dari Curr_Matriks, dari baris pertama hingga baris akhir
@@ -174,28 +175,6 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  free(Next_Matriks);
 };
 //prosedur menu untuk tampilan user
-
-// Prosedur printmatriks
-void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
-	// Prosedur ini memiliki parameter input jumlah baris dan jumlah kolom matriks, dan pointer elemen pertama matriks
-	// Prosedur ini menampilkan matriks pada layar
-	
-	// Kamus lokal
-
-	int i,j;
-	// Variabel untuk indeks matriks yang digunakan pada looping
-	
-	// Algoritma
-	printf("\nTampilan Matriks\n\n");
-
-	// Mencetak matriks
-	for(i=0;i<jumlah_baris;i++){
-		for(j=0;j<jumlah_kolom;j++){
-			printf("%c ",*((matriks+(i*jumlah_kolom))+j));
-		};
-		printf("\n");
-	};
-};
 
 // Prosedur Delay 
 void delay(int milli_seconds) 
