@@ -49,7 +49,7 @@ int main(void){
 			Matriks_Input(jumlah_baris,jumlah_kolom,Curr_Matriks,file);//memanggil prosedur matriks_input
 			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur printMatriks
 			fclose(file);//menutup file
-			ulang = 0
+			ulang = 0;
 		};
 		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur menu 
 		printf("\n");
