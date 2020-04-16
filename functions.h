@@ -146,6 +146,92 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
 };
 //prosedur menu untuk tampilan user
 
+// Prosedur printmatriks
+void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
+	// Prosedur ini memiliki parameter input jumlah baris dan jumlah kolom matriks, dan pointer elemen pertama matriks
+	// Prosedur ini menampilkan matriks pada layar
+	
+	// Kamus lokal
+
+	int i,j;
+	// Variabel untuk indeks matriks yang digunakan pada looping
+
+	printf("\nTampilan Matriks\n\n");
+
+	// Mencetak matriks
+	for(i=0;i<jumlah_baris;i++){
+		for(j=0;j<jumlah_kolom;j++){
+			printf("%c ",*((matriks+(i*jumlah_kolom))+j));
+		};
+		printf("\n");
+	};
+};
+
+// Prosedur Delay 
+void delay(int milli_seconds) 
+{ 	
+	// Prosedur delay memiliki parameter input waktu delay yang diinginkan dalam milisecond(ms)
+	
+	// Kamus lokal
+
+	int time = 0;
+
+	// Variabel utk menyimpan nilai delay yang diingkinkan
+	int time_delay;
+	
+	// Algoritma 
+
+    // Menyimpan start time
+    clock_t start_time = clock();
+
+    // nilai delay yang diinginkan ditambahkan dengan nilai start time
+    time_delay = start_time + milli_seconds;
+
+	// Melakukan looping sampai delay yang dibutuhkan/diinginkan
+    while (time < time_delay){
+		time = clock();
+	};  
+} ;
+
+// Prosedur Animate Matriks saat ini
+void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi){
+	// Prosedur ini memiliki paramter input jumlah baris, jumlah kolom, pointer ke elemen pertama matriks saat ini, dan jumlah iterasi yang akan dilakukan
+	// Prosedur akan menghasilkan matriks hasil tick dan menampilkannya, proses ini dilakukan sebanyak iterasi yang telah ditentukan
+	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu diantaranya :
+	// printMatriks untuk mencetak matriks
+	// Tick untuk melakukan 1 proses iterasi
+	// Delay untuk memberikan jeda(delay) antar iterasi
+
+	// Kamus lokal
+	int count = 0;
+	// Variabel count sebagai counter untuk menentukan proses iterasi sudah selesai atau belum
+	
+	// Algoritma
+	system("cls");
+	// Membersihkan layar program 
+
+	// Mencetak matriks saat ini
+	printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
+	
+	// melakukan looping sampai nilai count sama dengan iterasi
+	while(count<iterasi){
+		// Melakukan proses tick dan mencetak hasil sebanyak iterasi sesuai dengan input prosedur
+		delay(500);
+		// Memberikan delay antar iterasi
+
+		system("cls");
+		// Membersihkan layar program
+
+		// Melakukan proses tick dan mencetak matriks hasik tick
+		Tick(jumlah_baris,jumlah_kolom,Curr_Matriks);
+		printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
+		
+		count++;
+		// Proses iterasi pertama selesai dan dilanjutkan dengan iterasi kedua ditandai dengan nilai count bertambah 1
+	};
+};
+
+
 void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
 	int pilihan,iterasi;
 	char jawab[5];
@@ -194,66 +280,4 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 	};
 };
 
-// Prosedur Animate Matriks saat ini
-void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi){
-	// Prosedur ini memiliki paramter input jumlah baris, jumlah kolom, pointer ke elemen pertama matriks saat ini, dan jumlah iterasi yang akan dilakukan
-	// Prosedur akan menghasilkan matriks hasil tick dan menampilkannya, proses ini dilakukan sebanyak iterasi yang telah ditentukan
-	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu diantaranya :
-	// printMatriks untuk mencetak matriks
-	// Tick untuk melakukan 1 proses iterasi
-	// Delay untuk memberikan jeda(delay) antar iterasi
 
-	// Kamus lokal
-	int count = 0;
-	// Variabel count sebagai counter untuk menentukan proses iterasi sudah selesai atau belum
-	
-	// Algoritma
-	system("cls");
-	// Membersihkan layar program 
-
-	// Mencetak matriks saat ini
-	printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
-	
-	// melakukan looping sampai nilai count sama dengan iterasi
-	while(count<iterasi){
-		// Melakukan proses tick dan mencetak hasil sebanyak iterasi sesuai dengan input prosedur
-		delay(500);
-		// Memberikan delay antar iterasi
-
-		system("cls");
-		// Membersihkan layar program
-
-		// Melakukan proses tick dan mencetak matriks hasik tick
-		Tick(jumlah_baris,jumlah_kolom,Curr_Matriks);
-		printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
-		
-		count++;
-		// Proses iterasi pertama selesai dan dilanjutkan dengan iterasi kedua ditandai dengan nilai count bertambah 1
-	};
-};
-
-// Prosedur Delay 
-void delay(int milli_seconds) 
-{ 	
-	// Prosedur delay memiliki parameter input waktu delay yang diinginkan dalam milisecond(ms)
-	
-	// Kamus lokal
-
-	int time = 0;
-
-	// Variabel utk menyimpan nilai delay yang diingkinkan
-	int time_delay;
-	
-	// Algoritma 
-
-    // Menyimpan start time
-    clock_t start_time = clock();
-
-    // nilai delay yang diinginkan ditambahkan dengan nilai start time
-    time_delay = start_time + milli_seconds;
-
-	// Melakukan looping sampai delay yang dibutuhkan/diinginkan
-    while (time < time_delay){
-		time = clock();
-	};  
-} ;
