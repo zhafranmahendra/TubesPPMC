@@ -246,10 +246,12 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi,
 //prosedur untuk menampilkan status dari matriks
 void printStatus(int jumlah_baris, int jumlah_kolom, int gen, char nama_file[100]){
 	//memiliki parameter berupa jumlah baris dan kolom dari matriks, iterasi ke-n dari matriks, serta nama file yang dibuka
-	  printf("Nama file	: %s\n",nama_file); //menampilkan nama file yang sedang dibuka
-	  printf("Jumlah baris	: %d\n",jumlah_baris); //menampilkan jumlah baris dari matriks
-	  printf("Jumlah kolom	: %d\n",jumlah_kolom); //menampilkan jumlah kolom dari matriks
-	  printf("Iterasi		: %d\n",gen); //menampilkan pada iterasi ke berapa kondisi matriks saat ini
+    	printf("=======================================================================================================================\n");
+	  printf("\t\t\t\t\t\tNama file	: %s\n",nama_file); //menampilkan nama file yang sedang dibuka
+	  printf("\t\t\t\t\t\tJumlah baris	: %d\n",jumlah_baris); //menampilkan jumlah baris dari matriks
+	  printf("\t\t\t\t\t\tJumlah kolom	: %d\n",jumlah_kolom); //menampilkan jumlah kolom dari matriks
+	  printf("\t\t\t\t\t\tIterasi		: %d\n",gen); //menampilkan pada iterasi ke berapa kondisi matriks saat ini
+    printf("=======================================================================================================================\n");
  };
 
 
@@ -258,10 +260,12 @@ void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr
 	int pilihan,iterasi;
 	char jawab[5];
  //setelah memasukkan nama file, maka akan ditampilkan berbagai menu seperti berikut.
-	printf("\nPILIHAN MENU\n");
-	printf("1. Animate\n");//pilihan ini akan menjalankan prosedur animate dengan meminta input berapa kali iterasi
-	printf("2. Tick\n");//pilihan ini akan hanya menjalankan prosedur tick kemudian dikeluarkan hasilnya(1 iterasi)
-	printf("3. Quit\n");//Pilihan ini akan selanjutnya dimintai file eksternal yang baru kemudian akan keluar jika tidak ingin melanjutkan
+    printf("\n=======================================================================================================================\n");
+	printf("\t\t\t\t\t\t\tPILIHAN MENU\n");
+	printf("\t\t\t\t\t\t\t1. Animate\n");//pilihan ini akan menjalankan prosedur animate dengan meminta input berapa kali iterasi
+	printf("\t\t\t\t\t\t\t2. Tick\n");//pilihan ini akan hanya menjalankan prosedur tick kemudian dikeluarkan hasilnya(1 iterasi)
+	printf("\t\t\t\t\t\t\t3. Quit\n");//Pilihan ini akan selanjutnya dimintai file eksternal yang baru kemudian akan keluar jika tidak ingin melanjutkan
+	printf("=======================================================================================================================\n");
 	printf("\nMasukkan pilihan menu : ");
 	scanf("%d",&pilihan);
 	if(pilihan == 1){//menjalankan prosedur animate
