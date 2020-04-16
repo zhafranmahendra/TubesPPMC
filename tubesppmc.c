@@ -5,6 +5,7 @@ int main(void){
 	int jumlah_kolom;
 	int done = 0;
 	int ulang = 1;
+	char namafile[100];//array penyimpan inputan nama file user
 	char *Curr_Matriks = malloc(sizeof(char)*1*1);
   
   //tampilan awal permainan
@@ -24,7 +25,6 @@ int main(void){
 
 	while(done == 0){//selama done masih bernilai 0(tidak quit) artinya program akan terus berjalan
 		if(ulang == 1){
-			char namafile[100];//array penyimpan inputan nama file user
 			printf("Masukkan nama file : ");
 			scanf(" %s",namafile);//inout nama file
 			FILE *file;
@@ -51,7 +51,7 @@ int main(void){
 			fclose(file);//menutup file
 			ulang = 0;
 		};
-		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur menu 
+		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks,namafile);//memanggil prosedur menu 
 		printf("\n");
 	};
 	printf("Terima Kasih\n");//jika menu Quit dipilih dan tidak ingin menginput file baru
