@@ -48,11 +48,13 @@ int main(void){
 			Curr_Matriks = malloc(sizeof(char)*jumlah_baris*jumlah_kolom);//memesan mempori untuk array curr_matriks sebesar jumlah baris 
       			//dan jumlah kolom
 			Matriks_Input(jumlah_baris,jumlah_kolom,Curr_Matriks,file);//memanggil prosedur matriks_input
-			printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur printMatriks
 			fclose(file);//menutup file
 			ulang = 0;
 			gen = 0;
 		};
+		printf("\n");
+		printStatus(jumlah_baris,jumlah_kolom,gen,namafile); //memanggil prosedur printStatus
+		printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);//memanggil prosedur printMatriks
 		menu(&done,&ulang,jumlah_baris,jumlah_kolom,Curr_Matriks,&gen,namafile);//memanggil prosedur menu 
 		printf("\n");
 	};
