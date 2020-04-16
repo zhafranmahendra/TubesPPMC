@@ -4,7 +4,7 @@
 * Hari dan Tanggal : Senin, 13 April 2018 
 * Asisten (NIM)  : Meinanto Tri Yuriawan (13217021) 
 * Nama File   : functions.h  
-* Deskripsi   : Implementasi fungsi Tick dan count_neighbor  */ 
+* Deskripsi   : Implementasi fungsi Tick, menu ,count_neighbor  */ 
  
 //file ini digunakan sebagai library untuk fungsi-fungsi yang akan digunakan pada program utama
 
