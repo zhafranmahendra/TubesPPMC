@@ -201,8 +201,6 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu printMatriks untuk mencetak matriks
 	//  dan Tick untuk melakukan 1 proses iterasi
 
-
-
 	// Kamus lokal
 	int count = 0;
 	// Variabel count sebagai counter untuk menentukan proses iterasi sudah selesai atau belum
@@ -213,6 +211,8 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 
 	// Mencetak matriks saat ini
 	printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
+	
+	// melakukan looping sampai nilai count sama dengan iterasi
 	while(count<iterasi){
 		// Melakukan proses tick dan mencetak hasil sebanyak iterasi sesuai dengan input prosedur
 		delay(500);
