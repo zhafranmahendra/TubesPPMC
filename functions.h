@@ -119,7 +119,7 @@ int count_neighbor (int jumlah_baris, int jumlah_kolom, int posisi_baris, int po
 };
 
 //prosedur Tick dari matriks saat ini
-void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
+void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks, int *gen){
  //prosedur ini memiliki paramter input jumlah baris, jumlah kolom, dan pointer ke elemen pertama matriks saat ini
  //prosedur akan menghasilkan matriks hasil tick (iterasi sesuai ketentuan) dari matriks saat ini.
  //mengassign Next_Matriks sebagai matriks sementara hasil tick dari Curr_Matriks dengan besar yang sama dengan Curr_Matriks
@@ -176,6 +176,7 @@ void Tick (int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
  };
  //membebaskan memori dari Next_Matriks
  free(Next_Matriks);
+*gen = *gen + 1; //mengupdate pada iterasi ke berapa saat ini dari matriks
 };
 
 // Prosedur Delay 
@@ -205,7 +206,7 @@ void delay(int milli_seconds)
 } ;
 
 // Prosedur Animate Matriks saat ini
-void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi){
+void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi, int *gen){
 	// Prosedur ini memiliki paramter input jumlah baris, jumlah kolom, pointer ke elemen pertama matriks saat ini, dan jumlah iterasi yang akan dilakukan
 	// Prosedur akan menghasilkan matriks hasil tick dan menampilkannya, proses ini dilakukan sebanyak iterasi yang telah ditentukan
 	// Prosedur ini menggunakan prosedur lain(dari luar) yaitu diantaranya :
@@ -234,7 +235,7 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 		// Membersihkan layar program
 
 		// Melakukan proses tick dan mencetak matriks hasik tick
-		Tick(jumlah_baris,jumlah_kolom,Curr_Matriks);
+		Tick(jumlah_baris,jumlah_kolom,Curr_Matriks,gen);
 		printMatriks(jumlah_baris,jumlah_kolom,Curr_Matriks);
 		
 		count++;
@@ -243,9 +244,11 @@ void Animate(int jumlah_baris, int jumlah_kolom,char *Curr_Matriks, int iterasi)
 };
 
 //prosedur menu untuk tampilan user
-void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks){
+void menu (int *done, int *ulang, int jumlah_baris, int jumlah_kolom, char *Curr_Matriks,, int *gen, char namafile[100]){
 	int pilihan,iterasi;
 	char jawab[5];
+//menampilkan status dari matriks
+	printStatus(jumlah_baris,jumlah_kolom,*gen,namafile);
  //setelah memasukkan nama file, maka akan ditampilkan berbagai menu seperti berikut.
 	printf("\nPILIHAN MENU\n");
 	printf("1. Animate\n");//pilihan ini akan menjalankan prosedur animate dengan meminta input berapa kali iterasi
@@ -311,4 +314,11 @@ printf("\n");
 
 }
 
-
+//prosedur untuk menampilkan status dari matriks
+void printStatus(int jumlah_baris, int jumlah_kolom, int gen, char nama_file[100]){
+	//memiliki parameter berupa jumlah baris dan kolom dari matriks, iterasi ke-n dari matriks, serta nama file yang dibuka
+	  printf("Nama file	: %s\n",nama_file); //menampilkan nama file yang sedang dibuka
+	  printf("Jumlah baris	: %d\n",jumlah_baris); //menampilkan jumlah baris dari matriks
+	  printf("Jumlah kolom	: %d\n",jumlah_kolom); //menampilkan jumlah kolom dari matriks
+	  printf("Iterasi		: %d\n",gen); //menampilkan pada iterasi ke berapa kondisi matriks saat ini
+ };
