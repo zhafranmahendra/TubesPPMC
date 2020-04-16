@@ -37,7 +37,7 @@ void printMatriks(int jumlah_baris, int jumlah_kolom, char *matriks){
 // Prosedur dengan parameter jumlah baris, jumlah kolom, dan matriks
 // Prosedur akan membaca per baris per kolom dan mencetaknya satu satu
 	int i,j;
-	printf("\nTampilan Matriks\n\n");
+	printf("\nTAMPILAN MATRIKS\n\n");
 	for(i=0;i<jumlah_baris;i++){
 		for(j=0;j<jumlah_kolom;j++){
 			printf("%c",*((matriks+(i*jumlah_kolom))+j));
